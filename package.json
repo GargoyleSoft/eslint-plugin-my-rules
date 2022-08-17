@@ -1,0 +1,44 @@
+{
+  "name": "@gargoylesoft/eslint-plugin-my-rules",
+  "version": "1.0.0-alpha.3",
+  "description": "Various eslint rules I want enforced",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Gargoyle Software <support@gargoylesoft.com>",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc && cp src/index.js dist && cp package.json dist",
+    "test": "jest",
+    "dist": "yarn run lint && yarn run dist:build",
+    "dist:build": "yarn run dist:clean && tsc -p tsconfig-dist.json && cp src/index.js package.json dist",
+    "dist:clean": "rimraf dist",
+    "lint": "eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.4.5",
+    "@types/jest": "^28.1.7",
+    "@types/node": "^18.7.6",
+    "@typescript-eslint/parser": "^5.33.1",
+    "@typescript-eslint/typescript-estree": "^5.33.1",
+    "@typescript-eslint/utils": "5.33.1",
+    "eslint": "^8.19.0",
+    "eslint-plugin-eslint-plugin": "^5.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^28.1.3",
+    "requireindex": "^1.2.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "^16.0.0 || >= 18.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.19.0",
+    "typescript": "^4.7.4"
+  },
+  "license": "ISC"
+}
